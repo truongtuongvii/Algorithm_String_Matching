@@ -14,8 +14,9 @@ struct RunResult
     int match_count;
 };
 
-// 2. Khai báo nguyên mẫu (Prototype) các hàm thuật toán
+// Khai báo nguyên mẫu (Prototype) các hàm thuật toán
 RunResult naive_string_match(const string &T, const string &P);
+
 RunResult kmp_string_match(const string &T, const string &P);
 
 RunResult rabin_karp_double(const string &T, const string &P);
@@ -25,7 +26,7 @@ RunResult bmh_string_match(const string &T, const string &P);
 inline string generate_random_string(int length, const string &alphabet)
 {
     string res;
-    res.reserve(length); // Cấp phát trước bộ nhớ để sinh chuỗi lớn cực nhanh
+    res.reserve(length);
 
     static random_device rd;
     static mt19937 gen(rd());
@@ -43,6 +44,13 @@ inline pair<string, string> generate_worst_case(int n, int m)
     string T(n, 'A');
     string P(m - 1, 'A');
     P += 'B';
+    return {T, P};
+}
+
+inline pair<string, string> generate_best_case(int n, int m)
+{
+    string T(n, 'A');
+    string P(m, 'B');
     return {T, P};
 }
 

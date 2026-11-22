@@ -1,3 +1,4 @@
+// FFO sử dụng giải thuật Boyer-Moore-Horspool
 #include <vector>
 #include <string>
 
